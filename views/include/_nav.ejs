@@ -1,0 +1,157 @@
+
+<!--........nav .............-->
+<nav class="nav">
+    <div class="nav-img" >
+        <a href="/home"> 
+            <img  src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="tvastra logo"> 
+        </a>
+    </div>
+
+    <div class="nav-i">
+        <% if(data.user || data.admin){ %>
+        <div  class="dropdown user_name">           
+            <div class="dropbtn"> 
+                <% if(!data.admin){ %>
+                    <h5> <%= data.user.name %>  </h5>
+                <% }else{ %>
+                    <h5> <%= data.admin.name %>  </h5>
+                <% } %>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+            <div class="dropdown-content">
+                <a href="/profile" class="profile_info">
+                    <div class="photo">
+                        <% if(!data.admin){ %>
+                            <img src="./uploads/<%= data.user.file %>" alt="">
+                        <% }else{ %>
+                            <img src="./uploads/<%= data.admin.file %>" alt="">
+                        <% } %>
+                    </div>
+                    <div class="name_number">
+                        <% if(!data.admin){ %>
+                            <h5> <%= data.user.name %>  </h5>
+                            <p><%= data.user.number %></p>
+                        <% }else{ %>
+                            <h5> <%= data.admin.name %>  </h5>
+                            <p><%= data.admin.number %></p>
+                        <% } %>
+                    </div>
+                </a>
+                <% if(!data.admin){ %>
+                    <a href="appointment">appointment</a>
+                    <a href="medical_report">medical_report</a>
+                <% } %>
+                   
+                <a href="setting">setting</a>
+                <a href="logout">logout</a>
+            </div>       
+        </div>
+        <% } %>
+
+        <i class="fa fa-bars fa-1x" onclick="sidebar()"></i>
+       
+        <div class="sidebartwo" id="sidebar">
+            <div class="logo">
+                <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="Company Logo"></a>
+                <i class="fa fa-times" onclick="sidebar()"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/demodoc">Doctors</a></li>
+                    <li><a href="/hospital">Hospitals</a></li>
+                    <li><a href="/treatment">Treatment</a></li>
+                    <li><a href="/about_us">About</a></li>
+                </ul>
+            </nav>
+            <div id="headerButtons">
+                <a href="/tvastra_plus"><button class="btn-text">Tvastra Plus</button></a>
+                <a href="/submit_your_query"><button>Get a Quote</button></a>
+            </div>
+        </div>
+    </div>
+    <% if(!data.admin){ %>
+        <div class="desktop-nav">
+            <ul>               
+                <a href="/demodoc" >  <li class="navpage" >  Doctor   </li> </a>
+                <a href="hospital" > <li class="navpage" >   Hospital   </li> </a>
+                <li  class="dropdown">           
+                    <div class="dropbtn" class="navpage" >treatment  
+                        <i class="fa fa-caret-down"></i>  
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="/treatment">cancer</a>
+                        <a href="show_user">show_user</a>       
+    
+                    </div>       
+                </li>
+                <a href="about_us" >  <li class="navpage" >  About </li>   </a> 
+            </ul>
+        </div>
+ <%  } %>
+    
+    <div class="desktop-nav-buttons">
+        <% if(!data.admin){ %>
+            <div class="dnlogin"> 
+                <a href="login">  Login  </a> 
+                / 
+                <a href="signup">  Sign Up </a>  
+            </div>
+            
+                <button class="tvastra_plus"> <a href="/tvastra_plus">tvastra plus </a></button>
+                <button class="quote-button"> <a href="/submit_your_query">get a quote  </a> </button>
+            
+        <% } %>
+            <div  class="dropdown user_name">           
+                <div class="dropbtn"> 
+                    <% if(!data.admin){ %>
+                        <h5> <%= data.user.name %>  </h5>
+                    <% }else{ %>
+                        <h5> <%= data.admin.name %>  </h5>
+                    <% } %>
+                    <i class="fa fa-caret-down"></i>  
+                </div>
+                <div class="dropdown-content">
+                    <a href="/profile" class="profile_info">
+                        <div class="photo">
+                            <% if(!data.admin){ %>
+                                <img src="./uploads/<%= data.user.file %>" alt="">
+                            <% }else{ %>
+                                <img src="./uploads/<%= data.admin.file %>" alt="">
+                            <% } %>
+                        </div>
+                        <div class="name_number">
+                            <% if(!data.admin){ %>
+                                <h5> <%= data.user.name %>  </h5>
+                                <p><%= data.user.number %></p>
+                            <% }else{ %>
+                                <h5> <%= data.admin.name %>  </h5>
+                                <p><%= data.admin.number %></p>
+                            <% } %>
+                        </div>
+                    </a>
+                    <% if(!data.admin){ %>
+                        <a href="appointment">appointment</a>
+                        <a href="medical_report">medical_report</a>
+                    <% } %>
+                       
+                    <a href="setting">setting</a>
+                    <a href="logout">logout</a>
+                </div>       
+            </div>
+    </div>
+</nav> 
+<!--.........nav end..........-->
+
+
+<script>
+    
+    function sidebar(){
+        var sidebar = document.querySelector("#sidebar");
+        if( sidebar.style.transform == "translateY(0px)" ){
+            sidebar.style.transform = "translateY(-110%)" ;
+        }else{
+            sidebar.style.transform = "translateY(0px)" ;
+        }
+    } 
+
+</script>

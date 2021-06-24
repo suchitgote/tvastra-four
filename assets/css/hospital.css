@@ -56,7 +56,7 @@
 }
 
 /* ..........delhi......... */
-#delhi {
+#delhissheading {
   display: none;
 }
 
@@ -394,7 +394,7 @@ footer .footer-reserve {
 /* ..................................................................... */
 /* ..................................................................... */
 @media only screen and (min-width: 768px) {
-  #delhi {
+  #delhissheading {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(133, 178, 196, 0.9)), to(rgba(133, 178, 196, 0.9))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
     background-image: linear-gradient(rgba(133, 178, 196, 0.9), rgba(133, 178, 196, 0.9)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
     background-repeat: no-repeat;
@@ -410,7 +410,7 @@ footer .footer-reserve {
     font-family: nexa-light;
     font-size: 1.4rem;
   }
-  #delhi strong {
+  #delhissheading strong {
     font-weight: 900;
   }
   .sort {
@@ -518,6 +518,10 @@ footer .footer-reserve {
   #main .main .filter form .filter-search .filter-show-more {
     position: relative;
     margin-bottom: 2rem;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    font-family: nexa-light;
+    color: blue;
   }
   #main .main .filter form .filter-search .filter-show-more::after {
     position: absolute;
@@ -527,16 +531,14 @@ footer .footer-reserve {
     top: 2rem;
     left: 0rem;
   }
-  #main .main .filter form .filter-search .filter-show-more a {
-    -webkit-text-decoration-line: none;
-            text-decoration-line: none;
-    font-family: nexa-light;
-    color: blue;
-  }
   #main .main .filter form .filter-search .filter-show-less {
     display: none;
     position: relative;
     margin-bottom: 2rem;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    font-family: nexa-light;
+    color: blue;
   }
   #main .main .filter form .filter-search .filter-show-less::after {
     position: absolute;
@@ -545,12 +547,6 @@ footer .footer-reserve {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     top: 2rem;
     left: 0rem;
-  }
-  #main .main .filter form .filter-search .filter-show-less a {
-    -webkit-text-decoration-line: none;
-            text-decoration-line: none;
-    font-family: nexa-light;
-    color: blue;
   }
   #main .main .doctor-boxs .doctor-box {
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -623,7 +619,7 @@ footer .footer-reserve {
 /* ..................................................................... */
 /* ..................................................................... */
 @media only screen and (min-width: 1024px) {
-  #delhi {
+  #delhissheading {
     height: 12rem;
     font-size: 2rem;
   }

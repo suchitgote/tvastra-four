@@ -134,21 +134,21 @@
                 <h2>type of record</h2>  
                 <input type="radio" name="record_type" value="report" id="reportTypeInput">
                 <label for="reportTypeInput">
-                    <div class="report_type">
+                    <div class="report_type" onclick="repfun(0)" >
                         <i class="fa fa-file-text-o" aria-hidden="true"></i>
                         <h3>report</h3>
                     </div>
                 </label>
                 <input type="radio" name="record_type" value="prescription" id="prescriptionTypeInput">
                 <label for="prescriptionTypeInput">
-                    <div class="report_type">
+                    <div class="report_type"  onclick="repfun(0)" >
                         <i class="fa fa-file-text-o" aria-hidden="true"></i>
                         <h3>prescription</h3>
                     </div>
                 </label>
                 <input type="radio" name="record_type" value="invoice" id="invoiceTypeInput">
                 <label for="invoiceTypeInput">
-                    <div class="report_type">
+                    <div class="report_type"  onclick="repfun(0)">
                         <i class="fa fa-file-text-o" aria-hidden="true"></i>
                         <h3>invoice</h3>
                     </div>
@@ -264,6 +264,18 @@
     document.getElementById("datefield").setAttribute("max", today);
 </script>
 
+<script>
+    
+    function repfun(j) {
+        var reportt = document.getElementsByClassName("report_type");
+        console.log("report_type",reportt);
+        for(var i=0 ; i< reportt.length; i++) {
+            reportt[i].style.background = "white";
+        }
+        reportt[j].style.background = "grey";
+    }
+
+</script>
 
 </body>
 </html>

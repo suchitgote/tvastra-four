@@ -6,7 +6,7 @@ const { reset } = require('nodemon');
 
 var ObjectID = require('mongodb').ObjectID;
 
-
+ 
 const emaillogin = (req, res) => {
     console.log("mai emlog ")
     if (req.session.error_message) {
@@ -1397,7 +1397,20 @@ const cancelappointmentadmin = (req,res)=>{
 
 }
 
+const getdocname = (req ,res) => {
+    console.log("abe challllllllllllllllllll")
+    models.user_schema.findOne({_id : req.query.docid})
+    .select({name:1}) 
+    .then(user=>{
 
+        console.log("nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee = ",user);
+    
+        res.send(user)
+    })
+    .catch(err=>{
+        res.send("/home");
+    })
+}
 
 
 
@@ -1439,7 +1452,8 @@ module.exports = {
     admindoctorallappointment:admindoctorallappointment,
     hospitaladmin:hospitaladmin,
     hospitaladminform:hospitaladminform,
-    cancelappointmentadmin:cancelappointmentadmin
+    cancelappointmentadmin:cancelappointmentadmin,
+    getdocname:getdocname
 
 }
 

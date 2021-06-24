@@ -79,12 +79,14 @@
 
   
     <div class="dashbord_content2 mySlides">
-        <h2 class="no_appointment ">  no Appointment 😥 </h2>
 
         
 <div class="upcoming">
     <h2>Upcomming Appointments</h2>
-
+    
+    <% if(data.user.appointments.length == 0) { %>
+        <h2 class="no_aappointment ">  no Appointment 😥 </h2>
+    <% } %>
          
     <%   for(var i = 0; i < data.user.appointments.length ; i++){ 
            
@@ -152,7 +154,11 @@
                     <div class="date"> <h4> <%= data.user.appointments[i].appointmentdate.slice(4,10)  %> </h4></div>
                     <div class="time"> 
 
-                        <h4 class="name"><%= data.user.appointments[i].name  %> </h4>
+                        <h4 class="doctnam<%= i %>" id="doctnam<%= i %>" style="display: none;"><%= data.user.appointments[i].doctorid  %></h4>  
+                        <h4 class="lengdoc" id="lengdoc" style="display: none;"><%= data.user.appointments.length  %></h4>   
+                      
+                        <h4 class="name" id ="dn<%= i %>"><%= data.user.appointments[i].name  %></h4>
+                       
                         <h4><%= data.user.appointments[i].stime  %> to <%= data.user.appointments[i].etime %></h4>
                         <h4><%= data.user.appointments[i].bookhospital %> </h4>
                      <%     if( data.user.appointments[i].cancel == "cancel" ){   %>
@@ -178,6 +184,11 @@
 
         <div class="comp">
             <h2>completed Appointments</h2>
+
+            <% if(data.user.appointments.length == 0) { %>
+                <h2 class="no_gappointment ">  no Appointment 😥 </h2>
+            <% } %>
+
             <%   for(var i = 0; i < data.user.appointments.length ; i++){ 
            
                 console.log("date", data.user.appointments[i].appointmentdate , data.user.appointments[i].etime ) 
@@ -243,8 +254,10 @@
                     <div class="date_time">
                         <div class="date"> <h4> <%= data.user.appointments[i].appointmentdate.slice(4,10)  %> </h4></div>
                         <div class="time"> 
-    
-                            <h4 class="name"><%= data.user.appointments[i].name  %> </h4>
+                            <h4 class="lengdoc" id="lengdoc" style="display: none;"><%= data.user.appointments.length  %></h4>   
+                            <h4 class="doctnam<%= i %>" id="doctnam<%= i %>" style="display: none;"><%= data.user.appointments[i].doctorid  %></h4>  
+                
+                            <h4 class="name" id ="dn<%= i %>"><%= data.user.appointments[i].name  %></h4>
                             <h4><%= data.user.appointments[i].stime  %> to <%= data.user.appointments[i].etime %></h4>
                             <h4><%= data.user.appointments[i].bookhospital %> </h4>
                             
@@ -282,7 +295,36 @@
 <%- include('include/_footer') %>
 
 <!-- /include _footer -->
+<script>
+   
+   
 
+
+   
+    
+    var lengdoc = document.querySelector(".lengdoc");
+    console.log("lengdoc", lengdoc);
+
+    console.log("lengdoc.innerrrrrrr", lengdoc.innerHTML);
+    
+    
+    ( async function newdocname() {
+        
+        for (var i=0 ; i < lengdoc.innerHTML ; i++ ) {
+            var docnameee = document.querySelector(`.doctnam${i}`);
+            var v = docnameee.innerHTML;
+            const fet = await fetch(`/getdocname?docid=${v}`)
+            const fett = await fet.json();
+
+            console.log("fett = ",fett.name); 
+            // const c = await responsee.json();
+            // console.log("ccccccccccdddddddddddddddd",c)
+            
+            document.querySelector(`#dn${i}`).innerHTML = fett.name ;
+            console.log(" document.querySelector(`#dn${i}`).innerHTML = fett.name ;", document.querySelector(`#dn${i}`).innerHTML = fett.name )
+        }
+    })();
+</script>
 
 <script>
 

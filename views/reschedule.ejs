@@ -266,7 +266,13 @@
                         if(s <= 4){
                             const dates = datecontainer[ii].getElementsByClassName("dates");
                             for (let jj = 0; jj < dates.length; jj++) {
-                                dates[jj].style.transform += "translateX(-100%)";
+
+                                if(screen.width <= 767) {
+                                    dates[jj].style.transform += "translateY(-100%)";
+                                }
+                                else {
+                                    dates[jj].style.transform += "translateX(-100%)";
+                                }
                                
                                 dates[jj].setAttribute("value" , `${s}`);
                                   
@@ -300,7 +306,14 @@
                         if(!((ss == "") || (ss == 0))){
                             const datess = datecontainer[iii].getElementsByClassName("dates");
                             for (let j = 0; j < datess.length; j++) {
-                                datess[j].style.transform += "translateX(100%)";
+
+                                if(screen.width <= 767) {
+                                    datess[j].style.transform += "translateY(100%)";
+                                }
+                                else {
+                                    datess[j].style.transform += "translateX(100%)";
+                                }
+
                                 datess[j].setAttribute("value" , `${ssss}`);
                             }
                              var sssss = datecontainer[iii].getElementsByClassName("dates")[0].style.transform ;

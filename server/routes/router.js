@@ -7,7 +7,7 @@ const mainController = require("../controller/mainController")
 const path = require('path');
 const multer = require('multer');
 
-
+ 
 // multer fo single file
 var storage = multer.diskStorage({
     destination: "./assets/uploads/",
@@ -153,6 +153,7 @@ router.route("/otp_send_new").post(loginController.otp_send_new);
 
 router.route("/updatenumbercomp").get(loginController.updatenumbercomp);
 
+router.route("/getdocname").get(mainController.getdocname);
 // updatenumbercomp
 
 

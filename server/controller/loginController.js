@@ -8,7 +8,7 @@ const hrformat = require('24hformat');
 const sortArray = require('sort-array');
 
 var models = require('../model/model');
-
+ 
 const OtpManager = require("../../otp/OtpManager");
 const otpRepository = require("../../otp/otpRepository");
 const otpSender = require("../../otp/otpSender");
@@ -49,8 +49,8 @@ const signup = (req,res)=>{
     if(!(req.body.doctor == "doctor")){
             // create new user
             const user = new models.user_schema({
-                name : req.body.name,
-                email : req.body.email,
+                name : req.body.name.toLowerCase(),
+                email : req.body.email.toLowerCase(),
                 password : req.body.password,
                 gender : req.body.gender,
                 data : req.body.data,
@@ -65,7 +65,8 @@ const signup = (req,res)=>{
             user
                 .save(user)
                 .then(data => {
-                res.redirect('../show_user')
+                   req.session.succ_message =  "succesfully signup";
+                    res.redirect('emaillogin')
                 })
                 .catch(err =>{
                     res.render("signup",data = { user: false , doclog :false ,err : "email already exist"} )
@@ -149,8 +150,8 @@ const signupdocnew =(req,res)=>{
     console.log("req.body.yourself = ",req.body.yourself)
 
     const user = new models.user_schema({
-        name : req.session.objectofall.name,
-        email : req.session.objectofall.email,
+        name : req.session.objectofall.name.toLowerCase(),
+        email : req.session.objectofall.email.toLowerCase(),
         password : req.session.objectofall.password,
         gender : req.session.objectofall.gender,
         data : req.session.objectofall.data,
@@ -272,7 +273,7 @@ const emaillogin =  (req, res) => {
         })
         .catch(err => {
             console.log("enter valid Username")
-            req.session.error_message = "enter valid Username"
+            req.session.error_message = "Invalid Username or password"
             res.redirect("/emaillogin");
         })
     }else {

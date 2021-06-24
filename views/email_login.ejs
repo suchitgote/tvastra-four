@@ -9,6 +9,7 @@
    
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/new-theme.css">
+    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/email-login.css">
 
     <title>email-login</title>
@@ -17,12 +18,12 @@
  
     <!-- /include nav -->
     <%- include('include/_nav') %>
-    <!-- include nav-->
+    <!-- include nav--> 
           
          <% if(data.err) { %>
-            <div class="alert" id="err">
-                <i class="fa fa-times-circle" aria-hidden="true"></i>
-                <div class="alert_content">
+            <div class="alertt" id="err">
+                <i class="fa fa-times-circle" id="cross" aria-hidden="true"></i>
+                <div class="alert_contentt">
                     <h4>failuar</h4>
                     <p> <strong> <%= data.err %> </strong> </p>
                 </div>
@@ -31,9 +32,9 @@
         <% } %>
             
         <% if(data.succ) { %>
-            <div class="alert" id="succ">
+            <div class="alertt" id="succ">
                 <i class="fa fa-check-circle" aria-hidden="true"></i>
-                <div class="alert_content">
+                <div class="alert_contentt">
                     <h4>success</h4>
                     <p> <strong> <%= data.succ %> </strong> </p>
                 </div>

@@ -1,4 +1,6 @@
-@import "signup.scss"; 
+// @import "signup.scss"; 
+
+
 $red:red;
 $green :green;
 .nav{
@@ -12,7 +14,22 @@ $green :green;
     }
 }
 
-.alert {
+#succ{
+    border-left: 0.2rem solid $green;
+    i{
+        color: $green;
+    }
+    .alert_contentt{
+        h4{
+            color: $green;
+        }
+        p{
+            color: $green;
+        }
+    }
+}
+
+.alertt {
     padding: 0.5rem 1rem;
     background-color: white;
     position: absolute;
@@ -22,11 +39,11 @@ $green :green;
     z-index: 1;
     align-items: center;
     border-left: 0.2rem solid $red;
-    i{
+    #cross {
         font-size: 1.5rem;
         color: $red;
     }
-    .alert_content{
+    .alert_contentt{
         margin-left: 1rem;
         h4{
             color: $red;
@@ -51,20 +68,7 @@ $green :green;
     }
 }
   
-#succ{
-    border-left: 0.2rem solid $green;
-    i{
-        color: $green;
-    }
-    .alert_content{
-        h4{
-            color: $green;
-        }
-        p{
-            color: $green;
-        }
-    }
-}
+
 
 .main{
     .login-box{
@@ -83,12 +87,13 @@ $green :green;
                             width: auto;
                             border: none;
                             background: white;
-                            font-size: 1rem;
+                            font-size: 0.9rem;
                             font-weight: bold;
                             color: var(--heading);
                         }
                         h5{
                             color: var(--heading);
+                            font-size: 0.9rem;
                         }
                     }
                 }

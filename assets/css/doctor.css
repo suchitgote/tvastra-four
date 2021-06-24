@@ -56,7 +56,7 @@
 }
 
 /* ..........delhi......... */
-#delhi {
+#delhissheading {
   display: none;
 }
 
@@ -155,10 +155,26 @@
   grid-area: 2 / 1 / span 1 / span 2;
 }
 
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  #main .main .doctor-boxs .doctor-box .date-container {
+    height: 10rem;
+  }
+}
+
 #main .main .doctor-boxs .doctor-box .date-container .date-groups {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  #main .main .doctor-boxs .doctor-box .date-container .date-groups {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 10rem;
+  }
 }
 
 #main .main .doctor-boxs .doctor-box .date-container .date-groups .dates {
@@ -170,14 +186,23 @@
   cursor: pointer;
 }
 
-#main .main .doctor-boxs .doctor-box .date-container .date-groups .dates:hover {
-  border-bottom: 3px solid #0c71a7;
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  #main .main .doctor-boxs .doctor-box .date-container .date-groups .dates {
+    padding-bottom: 1.5rem;
+  }
 }
 
 #main .main .doctor-boxs .doctor-box .date-container .date-groups .active h5 {
   border-bottom: 3px solid #0c71a7;
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  #main .main .doctor-boxs .doctor-box .date-container .date-groups .active h5 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 #main .main .doctor-boxs .doctor-box .date-container .back-button {
@@ -188,6 +213,12 @@
   background: grey;
   border-radius: 50%;
   padding: 0.5rem 0.8rem;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  #main .main .doctor-boxs .doctor-box .date-container .back-button {
+    top: 3rem;
+  }
 }
 
 #main .main .doctor-boxs .doctor-box .date-container .back-button h4 {
@@ -202,6 +233,12 @@
   border-radius: 50%;
   padding: 0.5rem 0.8rem;
   right: 0;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  #main .main .doctor-boxs .doctor-box .date-container .frountbutton {
+    top: 3rem;
+  }
 }
 
 #main .main .doctor-boxs .doctor-box .date-container .frountbutton h4 {
@@ -394,7 +431,7 @@ footer .footer-reserve {
 /* ..................................................................... */
 /* ..................................................................... */
 @media only screen and (min-width: 768px) {
-  #delhi {
+  #delhissheading {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(133, 178, 196, 0.9)), to(rgba(133, 178, 196, 0.9))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
     background-image: linear-gradient(rgba(133, 178, 196, 0.9), rgba(133, 178, 196, 0.9)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
     background-repeat: no-repeat;
@@ -410,7 +447,7 @@ footer .footer-reserve {
     font-family: nexa-light;
     font-size: 1.4rem;
   }
-  #delhi strong {
+  #delhissheading strong {
     font-weight: 900;
   }
   .sort {
@@ -518,6 +555,10 @@ footer .footer-reserve {
   #main .main .filter form .filter-search .filter-show-more {
     position: relative;
     margin-bottom: 2rem;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    font-family: nexa-light;
+    color: blue;
   }
   #main .main .filter form .filter-search .filter-show-more::after {
     position: absolute;
@@ -527,16 +568,14 @@ footer .footer-reserve {
     top: 2rem;
     left: 0rem;
   }
-  #main .main .filter form .filter-search .filter-show-more a {
-    -webkit-text-decoration-line: none;
-            text-decoration-line: none;
-    font-family: nexa-light;
-    color: blue;
-  }
   #main .main .filter form .filter-search .filter-show-less {
     display: none;
     position: relative;
     margin-bottom: 2rem;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    font-family: nexa-light;
+    color: blue;
   }
   #main .main .filter form .filter-search .filter-show-less::after {
     position: absolute;
@@ -545,12 +584,6 @@ footer .footer-reserve {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     top: 2rem;
     left: 0rem;
-  }
-  #main .main .filter form .filter-search .filter-show-less a {
-    -webkit-text-decoration-line: none;
-            text-decoration-line: none;
-    font-family: nexa-light;
-    color: blue;
   }
   #main .main .doctor-boxs .doctor-box {
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -623,7 +656,7 @@ footer .footer-reserve {
 /* ..................................................................... */
 /* ..................................................................... */
 @media only screen and (min-width: 1024px) {
-  #delhi {
+  #delhissheading {
     height: 12rem;
     font-size: 2rem;
   }

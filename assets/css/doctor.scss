@@ -57,7 +57,7 @@ $red :red;
   
 
 /* ..........delhi......... */
-#delhi{ display: none; }
+#delhissheading{ display: none; }
 /* ..........delhi.end.......... */
 
 /* .........sort.......... */
@@ -138,23 +138,35 @@ $red :red;
                     position: relative;
                     // margin: 0.5rem;
                     grid-area: 2 / 1 / span 1 / span 2;
+                    @media only screen and ( min-width:300px) and (max-width:767px){
+                        height: 10rem;
+                    }
                     .date-groups{
                         display: flex;
+                        @media only screen and ( min-width:300px) and (max-width:767px){
+                            flex-direction: column;
+                            height: 10rem;
+                        }
                         .dates{
                             width: 17rem;
                             text-align: center;
                             transition: 0.3s;
                             height: 2rem;
                             cursor: pointer;
-                            &:hover{
-                               border-bottom: 3px solid $i;
+                            @media only screen and ( min-width:300px) and (max-width:767px){
+                                padding-bottom: 1.5rem;
                             }
+                         
                         }
                         .active{
                             h5{
                                 border-bottom: 3px solid $i;
                                 padding-bottom: 0.5rem;  
-                                margin-bottom: 0.5rem;                          
+                                margin-bottom: 0.5rem;  
+                                @media only screen and ( min-width:300px) and (max-width:767px){
+                                    padding-bottom: 0;  
+                                    margin-bottom: 0;
+                                }                        
                             }
                         }
                     }
@@ -166,6 +178,9 @@ $red :red;
                         background: grey;
                         border-radius: 50%;
                         padding: 0.5rem 0.8rem;
+                        @media only screen and ( min-width:300px) and (max-width:767px){
+                            top:3rem;
+                        }
                         h4{
                             color: white;
                         }
@@ -178,6 +193,9 @@ $red :red;
                         border-radius: 50%;
                         padding: 0.5rem 0.8rem;
                         right: 0;
+                        @media only screen and ( min-width:300px) and (max-width:767px){
+                            top:3rem;
+                        }
                         h4{
                             color: white;
                         }
@@ -317,7 +335,7 @@ footer{
 @media only screen and ( min-width:768px) {
     
 //........delhi.................................... 
-#delhi {
+#delhissheading {
     background-image: linear-gradient( $delhi_gra , $delhi_gra ),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -419,6 +437,9 @@ footer{
                     .filter-show-more{
                         position: relative;
                         margin-bottom: 2rem;
+                        text-decoration-line: none;
+                        font-family: nexa-light;
+                        color: $show-more;
                         &::after{
                             position: absolute;
                             content: "";
@@ -426,17 +447,15 @@ footer{
                             border-bottom: 2px solid $show_more_bor;
                             top:  2rem;
                             left: 0rem;
-                        }
-                        a{
-                            text-decoration-line: none;
-                            font-family: nexa-light;
-                            color: $show-more;
                         }
                     }
                     .filter-show-less{
                         display: none;
                         position: relative;
                         margin-bottom: 2rem;
+                        text-decoration-line: none;
+                        font-family: nexa-light;
+                        color: $show-more;
                         &::after{
                             position: absolute;
                             content: "";
@@ -444,11 +463,6 @@ footer{
                             border-bottom: 2px solid $show_more_bor;
                             top:  2rem;
                             left: 0rem;
-                        }
-                        a{
-                            text-decoration-line: none;
-                            font-family: nexa-light;
-                            color: $show-more;
                         }
                     }
                 }
@@ -538,7 +552,7 @@ footer{
 
 @media only screen and ( min-width:1024px){
 
-#delhi{
+#delhissheading{
     height: 12rem;
     font-size: 2rem;
 }
